@@ -25,7 +25,7 @@
     <string name="get_started_btn_label">Get Started</string>
 
     <!--Edit Text hints-->
-    <string name="email_address_hint">Email Address</string>
+    <string name="email_address_hint">Email Address/ User Name</string>
     <string name="full_name_hint">Full Name</string>
     <string name="password_hint">Password</string>
 

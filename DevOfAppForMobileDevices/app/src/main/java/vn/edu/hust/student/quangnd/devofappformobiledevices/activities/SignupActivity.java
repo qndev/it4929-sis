@@ -9,8 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.mikepenz.iconics.context.IconicsLayoutInflater2;
-import vn.edu.hust.student.quangnd.devofappformobiledevices.databinding.ActivitySignupBinding;
+
 import vn.edu.hust.student.quangnd.devofappformobiledevices.R;
+import vn.edu.hust.student.quangnd.devofappformobiledevices.databinding.ActivitySignupBinding;
 
 public class SignupActivity extends AppCompatActivity {
     ActivitySignupBinding binding;
