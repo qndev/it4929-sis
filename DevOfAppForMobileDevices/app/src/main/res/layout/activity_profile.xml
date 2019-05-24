@@ -20,7 +20,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/profile_icon"/>
+                app:srcCompat="@drawable/profile_icon"/>
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
@@ -47,7 +47,7 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_email_black_24dp"/>
+                app:srcCompat="@drawable/ic_email_black_24dp"/>
             <TextView
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
@@ -65,7 +65,7 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_phone_android_black_24dp"/>
+                app:srcCompat="@drawable/ic_phone_android_black_24dp"/>
             <TextView
                 android:textStyle="bold"
 
@@ -84,7 +84,7 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_group_add_black_24dp"/>
+                app:srcCompat="@drawable/ic_group_add_black_24dp"/>
             <TextView
                 android:textStyle="bold"
 
@@ -103,7 +103,7 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_forum_black_24dp"/>
+                app:srcCompat="@drawable/ic_forum_black_24dp"/>
             <TextView
                 android:textStyle="bold"
 
