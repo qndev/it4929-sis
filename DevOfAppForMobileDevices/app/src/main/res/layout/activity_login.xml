@@ -128,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_below="@id/divider"
                 android:backgroundTint="@color/fb_blue"
-                android:text="@string/login_fb_btn_label"
+                android:text="@string/btn_seed"
                 android:textSize="16sp" />
 
 
@@ -152,7 +152,6 @@
                     style="@style/LabelStyle"
                     android:layout_toEndOf="@id/no_account"
                     android:fontFamily="@font/sf_pro_display_medium"
-                    android:onClick="signup"
                     android:text="@string/signup_label"
                     android:textColor="@color/orange"
                     android:textSize="16sp"

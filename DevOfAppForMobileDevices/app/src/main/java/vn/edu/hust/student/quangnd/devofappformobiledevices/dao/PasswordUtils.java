@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vn.edu.hust.student.quangnd.devofappformobiledevices.logic;
+package vn.edu.hust.student.quangnd.devofappformobiledevices.dao;
 
 import org.jasypt.util.password.StrongPasswordEncryptor;
 /**
