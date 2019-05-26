@@ -21,6 +21,7 @@ import vn.edu.hust.student.quangnd.devofappformobiledevices.objects.User;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static final String USER_ID = "studentid";
     private static final String TAG = "User Login";
     ActivityLoginBinding binding;
     private DatabaseHelper databaseHelper;
@@ -38,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonSeedData = (Button) findViewById(R.id.btn_login_fb);
         userName = (EditText) findViewById(R.id.et_email_address);
         password = (EditText) findViewById(R.id.et_password);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 boolean checkLogin = databaseHelper.getStudentUserLogin(student);
                 if (checkLogin == true) {
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    intent.putExtra(USER_ID, user);
                     startActivity(intent);
                     Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
                     Log.d(TAG, "Successfully!");
@@ -57,10 +60,12 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
         buttonSeedData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean seedData = databaseHelper.seedUserLogin();
+                //boolean seedData = databaseHelper.seedUserLogin();
+                boolean seedData = databaseHelper.seedStudentInfo();
                 if (seedData == true) {
                     Toast.makeText(LoginActivity.this, "Seed data Successfully!", Toast.LENGTH_SHORT).show();
                     Log.d("Seed data", "Successfully!");

@@ -4,7 +4,7 @@ import java.sql.Date;
 public class Student {
     private String studentId;
     private String name;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String studentClass;
     private String eduProgram;
     private String trainingSystem;
@@ -33,11 +33,11 @@ public class Student {
         this.name = name;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -105,7 +105,7 @@ public class Student {
         this.tuitionUnit = tuitionUnit;
     }
 
-    public Student(String studentId, String name, Date dateOfBirth, String studentClass, String eduProgram, String trainingSystem, String state, String year, String department, String email, Double tuitionUnit) {
+    public Student(String studentId, String name, String dateOfBirth, String studentClass, String eduProgram, String trainingSystem, String state, String year, String department, String email, Double tuitionUnit) {
         this.studentId = studentId;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -117,5 +117,18 @@ public class Student {
         this.department = department;
         this.email = email;
         this.tuitionUnit = tuitionUnit;
+    }
+
+    public Student(String studentId, String name, String dateOfBirth, String studentClass, String eduProgram, String trainingSystem, String state, String year, String department, String email) {
+        this.studentId = studentId;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.studentClass = studentClass;
+        this.eduProgram = eduProgram;
+        this.trainingSystem = trainingSystem;
+        this.state = state;
+        this.year = year;
+        this.department = department;
+        this.email = email;
     }
 }

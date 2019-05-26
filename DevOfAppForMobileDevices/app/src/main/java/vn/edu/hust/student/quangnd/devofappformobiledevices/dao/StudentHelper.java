@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import vn.edu.hust.student.quangnd.devofappformobiledevices.objects.Student;
+
 public class StudentHelper extends SQLiteOpenHelper implements IStudentHelper{
 
     private static final String DATABASE_NAME = "sis.db";
@@ -43,6 +45,11 @@ public class StudentHelper extends SQLiteOpenHelper implements IStudentHelper{
     @Override
     public void getStudentProfile(String studentId) {
 
+    }
+
+    @Override
+    public Student getStudentById(String studentId) {
+        return null;
     }
 
     @Override

@@ -47,10 +47,11 @@
                     android:background="@color/lightgray"
                     android:layout_margin="10dp"/>
                 <TextView
+                    android:id="@+id/text_view_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Check your bank activities"
+                    android:text="User name"
                     android:padding="5dp"
                     android:textColor="@android:color/darker_gray"/>
 

@@ -7,10 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import vn.edu.hust.student.quangnd.devofappformobiledevices.objects.Student;
 import vn.edu.hust.student.quangnd.devofappformobiledevices.objects.User;
 
 public class DatabaseHelper extends SQLiteOpenHelper implements IUserHelper, IStudentHelper {
@@ -36,6 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IUserHelper, ISt
     private static final String TUITION = "tuition_unit";
     private static final int SCHEMA_VERSION = 2;
     private static final String TAG = "DatabaseHelper";
+    private Context context;
 
     private String createTableSqlQuery = "CREATE TABLE " + USER_TABLE + " (" +
             USER_NAME + " TEXT PRIMARY KEY," +
@@ -45,7 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IUserHelper, ISt
     private String createStudentTable = "CREATE TABLE " + STUDENT_TABLE + " (" +
             STUDENT_ID + " TEXT PRIMARY KEY," +
             NAME + " TEXT," +
-            DATE_OF_BIRTH + " NUMERIC," +
+            DATE_OF_BIRTH + " TEXT," +
             STUDENT_CLASS + " TEXT," +
             EDU_PROGRAM + " TEXT," +
             TRAINING + " TEXT," +
@@ -57,6 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IUserHelper, ISt
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, SCHEMA_VERSION);
+        this.context = context;
     }
 
     @Override
@@ -86,7 +85,9 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IUserHelper, ISt
             String roleGetFromDB = cursor.getString(2);
             User studentUserFromDB = new User(userNameGetFromDB, passwordGetFromDB, roleGetFromDB);
             boolean encryptedPassword = PasswordUtils.checkPassword(user.getPassword(), studentUserFromDB.getPassword());
-            if (user.getUserName().equals(studentUserFromDB.getUserName()) && user.getIsAdmin().equals(studentUserFromDB.getIsAdmin()) && encryptedPassword == true) {
+            if (user.getUserName().equals(studentUserFromDB.getUserName())
+                    && user.getIsAdmin().equals(studentUserFromDB.getIsAdmin())
+                    && encryptedPassword == true) {
                 return true;
             } else {
                 return false;
@@ -94,6 +95,36 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IUserHelper, ISt
         } else {
             return false;
         }
+    }
+
+    @Override
+    public Student getStudentById(String studentId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // Define a projection that specifies which columns from the database
+        // you will actually use after this query.
+        String[] columns = {
+                STUDENT_ID, NAME, DATE_OF_BIRTH,
+                STUDENT_CLASS, EDU_PROGRAM, TRAINING,
+                STATE, YEAR, DEPARTMENT, EMAIL
+        };
+
+        // Filter results WHERE "student_id" = "studentId"
+        String selection = STUDENT_ID + " =?";
+        String[] selectionArgs = {studentId};
+
+        Cursor cursor = db.query(STUDENT_TABLE, columns, selection, selectionArgs,
+                null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+        Student student = new Student(cursor.getString(0),
+                cursor.getString(1), cursor.getString(2),
+                cursor.getString(3), cursor.getString(4),
+                cursor.getString(5), cursor.getString(6),
+                cursor.getString(7), cursor.getString(8),
+                cursor.getString(9)
+        );
+        return student;
     }
 
     public boolean insertUser(User user) {
@@ -139,7 +170,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IUserHelper, ISt
         String year = "2014";
         String department = "Cong nghe thong tin";
         String email = "quangnd.hust@gmail.com";
-        String tuitionUnit = "230";
+        Double tuitionUnit = 230.0;
         ContentValues values = new ContentValues();
         values.put(STUDENT_ID, studentId);
         values.put(NAME, name);
