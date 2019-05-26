@@ -45,16 +45,15 @@ public class HomeActivity extends AppCompatActivity {
         cardViewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                 student = databaseHelper.getStudentById(studentId);
                 bdBundle(student);
-                Log.d("Profile User", "Loaded!");
+                Log.d("Profile User", "Loadesd!");
                 Toast.makeText(HomeActivity.this, "Profile User!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void bdBundle(Student student) {
+    public void bdBundle(Student student) {
         Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString(BD_STUDENT_ID, student.getStudentId());

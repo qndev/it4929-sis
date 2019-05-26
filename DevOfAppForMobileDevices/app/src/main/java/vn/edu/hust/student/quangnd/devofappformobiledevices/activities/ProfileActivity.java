@@ -3,6 +3,7 @@ package vn.edu.hust.student.quangnd.devofappformobiledevices.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,17 +28,29 @@ public class ProfileActivity extends AppCompatActivity {
         textViewDate = (TextView) findViewById(R.id.textDate);
         textViewCLass = (TextView) findViewById(R.id.textClass);
         textViewDepartment = (TextView) findViewById(R.id.textDepartment);
+
         setDataByBundle();
+
         buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                profileBundle();
+                Log.d("Edit Profile", "Opened!");
             }
         });
     }
 
-    public void setDataByBundle(){
+    private void profileBundle() {
         Intent intent = getIntent();
+        Intent intentEditProfile = new Intent(ProfileActivity.this, EditProfileActivity.class);
+        Bundle bundle = intent.getBundleExtra(HomeActivity.BUNDLE);
+        intentEditProfile.putExtra(HomeActivity.BUNDLE, bundle);
+        startActivity(intentEditProfile);
+    }
+
+    public void setDataByBundle() {
+        Intent intent = getIntent();
+        //Intent intentEditProfile = new Intent(ProfileActivity.this, EditProfileActivity.class);
         if (intent != null) {
             Bundle bundle = intent.getBundleExtra(HomeActivity.BUNDLE);
             if (bundle != null) {
@@ -53,6 +66,8 @@ public class ProfileActivity extends AppCompatActivity {
                 textViewCLass.setText(intent.getStringExtra(HomeActivity.BD_CLASS));
                 textViewDepartment.setText(intent.getStringExtra(HomeActivity.BD_DEPARTMENT));
             }
+            /*intentEditProfile.putExtra(HomeActivity.BUNDLE, bundle);
+            startActivity(intentEditProfile);*/
         }
     }
 }

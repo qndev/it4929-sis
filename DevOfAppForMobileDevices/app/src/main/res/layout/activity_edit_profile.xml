@@ -30,7 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <RelativeLayout
             android:id="@+id/linear_account"
             android:layout_width="match_parent"
@@ -64,9 +63,11 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_id_student"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Name"
+                            android:editable="false"
+                            android:hint="MSSV"
                             android:imeOptions="actionNext"
                             android:textColorHint="@color/colorPrimary" />
 
@@ -78,9 +79,10 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Email Address"
+                            android:hint="Name"
                             android:imeOptions="actionNext"
                             android:inputType="textEmailAddress"
                             android:textColorHint="@color/colorPrimary" />
@@ -94,24 +96,10 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_date"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="password"
-                            android:imeOptions="actionNext"
-                            android:inputType="textPassword"
-                            android:textColorHint="@color/colorPrimary" />
-
-                    </android.support.design.widget.TextInputLayout>
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColorHint="@color/colorPrimary">
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Name"
+                            android:hint="Date Of Birth"
                             android:imeOptions="actionNext"
                             android:textColorHint="@color/colorPrimary" />
 
@@ -123,9 +111,11 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_class"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Name"
+                            android:editable="false"
+                            android:hint="Class"
                             android:imeOptions="actionNext"
                             android:textColorHint="@color/colorPrimary" />
 
@@ -137,9 +127,11 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_program"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Name"
+                            android:editable="false"
+                            android:hint="Edu Program"
                             android:imeOptions="actionNext"
                             android:textColorHint="@color/colorPrimary" />
 
@@ -151,9 +143,11 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_system"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Name"
+                            android:editable="false"
+                            android:hint="Training System"
                             android:imeOptions="actionNext"
                             android:textColorHint="@color/colorPrimary" />
 
@@ -165,9 +159,11 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_state"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Name"
+                            android:editable="false"
+                            android:hint="State"
                             android:imeOptions="actionNext"
                             android:textColorHint="@color/colorPrimary" />
 
@@ -179,9 +175,10 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_year"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Name"
+                            android:hint="Year"
                             android:imeOptions="actionNext"
                             android:textColorHint="@color/colorPrimary" />
 
@@ -193,9 +190,11 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_department"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Name"
+                            android:editable="false"
+                            android:hint="Department"
                             android:imeOptions="actionNext"
                             android:textColorHint="@color/colorPrimary" />
 
@@ -207,21 +206,22 @@
                         android:textColorHint="@color/colorPrimary">
 
                         <EditText
+                            android:id="@+id/text_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Name"
+                            android:hint="Email"
                             android:imeOptions="actionNext"
                             android:textColorHint="@color/colorPrimary" />
 
                     </android.support.design.widget.TextInputLayout>
-
                 </LinearLayout>
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="35dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:background="@drawable/buttonstyleithgradient"
                     android:text="Update"
                     android:textColor="#fff" />
@@ -239,9 +239,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="35dp"
                     app:srcCompat="@drawable/profile_icon" />
-
             </LinearLayout>
-
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
