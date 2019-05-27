@@ -7,7 +7,7 @@ import android.util.Log;
 
 import vn.edu.hust.student.quangnd.devofappformobiledevices.objects.Student;
 
-public class StudentHelper extends SQLiteOpenHelper implements IStudentHelper{
+public class StudentHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "sis.db";
     private static final String TABLE_NAME = "student";
@@ -40,16 +40,6 @@ public class StudentHelper extends SQLiteOpenHelper implements IStudentHelper{
 
     public StudentHelper(Context context) {
         super(context, DATABASE_NAME, null, SCHEMA_VERSION);
-    }
-
-    @Override
-    public void getStudentProfile(String studentId) {
-
-    }
-
-    @Override
-    public Student getStudentById(String studentId) {
-        return null;
     }
 
     @Override
